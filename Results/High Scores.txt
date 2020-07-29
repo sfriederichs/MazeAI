@@ -1,0 +1,865 @@
+Map 1
+
+Tops -
+
+  1     47    (20, 1)   51    (20, 1)  (1,1,1,1,1)
+ 10     47    (20, 1)   51    (20, 1)  (1,1,2,1,1)
+ 19     47    (20, 1)   51    (20, 1)  (1,1,3,1,1)
+
+The top performers were again 1, 10, and 19 simply because of the annoyance increment and the
+(lack of) effect it has on actual performance.  They basically kept the same path through the 
+maze as before, but with double annoyance, the trick they used to thwart the maze before was 
+turned into a feature.  These above got through the maze the fastest simply because there is an
+ almost direct path to the exit that only their specific traits will find the quickest, and 
+this basically means that we will almost definitely NOT see these same results in any other 
+map.  Bye bye 1, 10, and 19.
+
+Seconds (Under 75) - 
+
+  2     74    (20, 1)   47    (20, 1)  (2,1,1,1,1)
+  3     67    (20, 1)   45    (20, 1)  (3,1,1,1,1)
+
+This is interesting, here we see that those two AI's with incremented thriftyness seem to get 
+through the maze almost just as easily (almost) as 1 which had a value of 1.  Perhaps 
+thriftyness is not a very important trait, then again, perhaps not.
+
+  4     61    (20, 1)  106    (20, 1)  (1,2,1,1,1)
+  5     50    (20, 1)  215    (20, 1)  (2,2,1,1,1)
+
+Here we see two set of traits with updown set to 2, and not much degredation of scores.  To 
+lend credence to the theory that thriftyness might not be so important, we see a very low score
+ of 50 with a value of 2 for thriftyness, also note that updown is at 2 in this case.  In the
+ first case, number 4, we see an acceptable score of 61 with an updown value of 2, yet, note
+ the thriftyness value of 1.  My guess: it only ever used updown once in the entire maze, 
+because it had always used thriftyness before, and when it used it the one time, it was 
+annoyed, and it ran INTO a wall, causing it to lose time while it became annoyed again, and 
+went the right way.
+
+
+Now we have a somewhat large gap (for smaller numbered sets anyway), let's take a look at the
+ results that DIDN'T make it.
+
+  6     79    (20, 1)   99    (20, 1)  (3,2,1,1,1) 
+
+Just barely didn't make it, notice thriftyness set to 3, updown to 1, it was only using updown
+ the entire maze, rather good performance.
+
+   7    350    (18, 8)  350    (20,17)  (1,3,1,1,1)
+
+Updown as three seems to be a destructive trait when thriftyness is one, because this will
+ force it to go the wrong way at the 'ledge' (as I call it) when it becomes annoyed, it will
+ keep slamming itself into walls.  Number 25 has this also, and it, too, bombed.
+
+  8     93    (20, 1)  350    (15, 1)  (2,3,1,1,1)
+
+This is more interesting, because updown is 3, but thriftyness is 2.  Thriftyness saved it, 
+and its score is rather good too. 
+ 
+Now onto the good stuff.
+
+  9     53    (20, 1)  351    (15, 1)  (3,3,1,1,1)
+
+MORE interesting, thriftyness and updown, both set to three, so it always uses updown, and 
+according to my earlier theory, it should go the wrong way, but here it is, and with a score 
+of 53, getting near the baseline.  I may need to run a few simulations of this one to account
+ for it.
+
+ 11     56    (20, 1)   62    (20, 1)  (2,1,2,1,1)
+ 12     67    (20, 1)   45    (20, 1)  (3,1,2,1,1)
+ 13     66    (20, 1)   81    (20, 1)  (1,2,2,1,1)
+ 14     49    (20, 1)  247    (15, 2)  (2,2,2,1,1)
+ 15     60    (20, 1)   68    (20, 1)  (3,2,2,1,1)
+ 18     53    (20, 1)  351    (15, 1)  (3,3,2,1,1)
+ 21     67    (20, 1)   45    (20, 1)  (3,1,3,1,1)
+ 22     52    (20, 1)   59    (20, 1)  (1,2,3,1,1)
+ 23     52    (20, 1)  134    (20, 1)  (2,2,3,1,1)
+ 24     56    (20, 1)   66    (20, 1)  (3,2,3,1,1)
+ 26     64    (20, 1)  235    (15, 1)  (2,3,3,1,1)
+ 27     53    (20, 1)  351    (15, 1)  (3,3,3,1,1)
+
+All of these are the same as the ones before, with only their annoyance changed in one way or 
+another (which as we already know, annoyance doesn't matter), if you want some explanation, 
+either subtract 9 or 18 from the number, and check the explanation for that number, it will be 
+the same.
+
+
+Those that didn't make it (200's and up with Lookahead <2)
+
+  7    350    (18, 8)  350    (20,17)  (1,3,1,1,1)
+ 16    350    (18, 8)  350    (19,17)  (1,3,2,1,1)
+ 25    350    (18, 8)  350    (20,17)  (1,3,3,1,1)
+
+In these first 3 we see thriftyness values of 1 with updown three, and varying annoyance, bad 
+combination as stated before.
+
+ 28    237    (20, 1)   56    (20, 1)  (1,1,1,2,1)
+ 31    250    (10,12)   65    (20, 1)  (1,2,1,2,1)
+ 32    286    (10,12)   59    (20, 1)  (2,2,1,2,1)
+ 34    350    (10,12)  330    (20,17)  (1,3,1,2,1)
+ 35    350    (10,13)  350    (19,17)  (2,3,1,2,1)
+ 36    255    ( 7, 6)  198    (20, 1)  (3,3,1,2,1)
+ 37    312    ( 5, 8)   56    (20, 1)  (1,1,2,2,1)
+ 38    206    ( 8, 8)   57    (20, 1)  (2,1,2,2,1)
+ 43    350    (10,12)  350    (19,17)  (1,3,2,2,1)
+ 44    350    (18, 8)  350    (20,17)  (2,3,2,2,1)
+ 46    312    (10,12)   58    (20, 1)  (1,1,3,2,1)
+ 49    312    (20, 1)   80    (20, 1)  (1,2,3,2,1)
+ 52    350    (18, 9)  350    (20,17)  (1,3,3,2,1)
+ 53    350    (18, 9)  350    (19,17)  (2,3,3,2,1)
+ 54    238    (20, 1)  312    (15, 1)  (3,3,3,2,1)
+
+Amazing, it's like upping the resolutness number by one also ups the scores by like, 250 
+points, so, we're looking at all the other traits the same except for resolutness, and when 
+you punch that up a notch, bam, higher scores.  Looks like hypothesis confirmed.
+
+And now to the doldrums.
+
+ 55    350    (10,12)   60    (20, 1)  (1,1,1,3,1)
+ 56    350    (10,12)   60    (20, 1)  (2,1,1,3,1)
+ 57    350    (10,12)   60    (20, 1)  (3,1,1,3,1)
+ 58    350    (10,12)   73    (20, 1)  (1,2,1,3,1)
+ 59    350    (10,12)   80    (20, 1)  (2,2,1,3,1)
+ 60    350    ( 9,12)  121    (20, 1)  (3,2,1,3,1)
+ 61    350    (10,12)  350    (20,17)  (1,3,1,3,1)
+ 62    350    (10,12)  350    (20,17)  (2,3,1,3,1)
+ 63    350    (10,12)  350    (20,17)  (3,3,1,3,1)
+ 64    350    (10,12)   62    (20, 1)  (1,1,2,3,1)
+ 65    350    (10,12)   62    (20, 1)  (2,1,2,3,1)
+ 66    350    (10,12)   62    (20, 1)  (3,1,2,3,1)
+
+ 67    332    (10,12)   94    (20, 1)  (1,2,2,3,1)
+
+Heigh, ho, what's this?  It didn't bomb, let's take a look.  Lookahead - 1, given, ignore. 
+ Resolutness - 3, given too, ignore.  Annoyance - 2, worthless, ignore.  Okay, let's examine
+ behavior.  Now, thriftyness and resolutness 2 together don't do too much, because thriftyness
+ will act like being unresolute pretty much, so if its resolute or not resolute, but thrifty
+ all the time, its behavior will change little, so, the trait here that is most important is
+ updown, which is 2.  This one, I will need to run a simulation to examine.
+
+ 68    350    (10,12)  114    (20, 1)  (2,2,2,3,1)
+ 69    350    (10,12)  109    (20, 1)  (3,2,2,3,1)
+ 70    350    (10,12)  350    (20,17)  (1,3,2,3,1)
+ 71    350    (10,12)  350    (20,17)  (2,3,2,3,1)
+ 72    350    (10,12)  350    (20,17)  (3,3,2,3,1)
+ 73    350    (10,12)   62    (20, 1)  (1,1,3,3,1)
+ 74    350    (10,12)   62    (20, 1)  (2,1,3,3,1)
+ 75    350    (10,12)   62    (20, 1)  (3,1,3,3,1)
+ 76    350    (10,12)   90    (20, 1)  (1,2,3,3,1)
+ 77    350    ( 9,12)   91    (20, 1)  (2,2,3,3,1)
+ 78    350    (10,12)   97    (20, 1)  (3,2,3,3,1)
+ 79    350    (10,12)  350    (20,17)  (1,3,3,3,1)
+ 80    350    (10,13)  350    (20,17)  (2,3,3,3,1)
+ 81    350    (10,13)  350    (20,17)  (3,3,3,3,1)
+
+
+And the rest, well, they bombed.  Next map.
+
+On the second run through, I took them through the same maze, only backwards.  Since they don't
+ mark points or anything, it was pretty much a totally new map.
+
+Map 2
+
+Ho boy, if they MADE it, they pass here, lets see:
+
+  6    288    ( 2,19)   61    ( 2,19)  (3,2,1,1,1)
+ 15    316    ( 3,13)   55    ( 2,19)  (3,2,2,1,1)
+ 24    296    ( 5,13)   57    ( 2,19)  (3,2,3,1,1)
+ 33    329    ( 8,18)   62    ( 2,19)  (3,2,1,2,1)
+ 51    335    ( 8,17)   53    ( 2,19)  (3,2,3,2,1)
+
+First off, let's ALL make fun of 1, 10, and 19 because they all BOMBED.  I'd also like to point
+ out that they all BOMBED on the obstacle course too, which is odd because it's all
+ symmetrical, so running them through it backwards is no different than running them through 
+it frontwards.
+
+Now, back to the results.  They all have 1 for lookahead, okay, 3 for thriftyness, looks like 
+it's NOT a very important trait after all, 2 for updown, and of course, annoyance doesn't
+ matter, and the final trait is resolutness, which is either one or two.  Now, what is missing 
+is 42, which is on the annoyance increment, but didnt' make the cut somehow.  Okay, maybe 
+annoyance matters A BIT.  But also, those with resolutness value of 1 seemed to do better than 
+those with a value of 2, so so far, our most important traits are updown and resolutness.  For 
+general information, on the first map, the 6, 15, and 24 did under 80, and 33 and 51 did from 
+rought 90-110 (there's that upping of scores with resolutness again).
+
+So far, we've got 6 in the lead after 2 maps.
+
+Map 3
+
+This time, it was from a third corner to its far corner, none of these corners were used 
+before.
+
+Tops - 
+
+  9     45    (20,19)  350    ( 2, 1)  (3,3,1,1,1)
+ 18     45    (20,19)  350    ( 2, 1)  (3,3,2,1,1)
+ 27     45    (20,19)  350    ( 2, 1)  (3,3,3,1,1)
+
+With unprecedented efficiency, the 9 set completes this maze with a time never seen before of 
+45, fastest for any map so far.  Logically, since we're running the maze in a different way, 
+in this case, updown as 3 may be beneficial, and seeing as how it is only used here 
+(note thrifytness of 3), it is really beneficial.  Also, note again, resolutness of 1.  
+Damn my theories rock.
+
+Higher Scores (Less than 100) - 
+
+  5     67    (20,19)   91    (20,19)  (2,2,1,1,1)
+  6     83    (20,19)   91    (20,19)  (3,2,1,1,1)
+
+Here we see something interesting, thriftyness with 2 got a better score than with it as 
+three, could this break my earlier theory about it?  Maybe.  In any case, updown is 2 in 
+both cases, also interesting, cause it's random.
+
+  8     77    (20,19)  262    (20,19)  (2,3,1,1,1)
+ 14     55    (20,19)   66    (20,19)  (2,2,2,1,1)
+
+In this case, updown with a random score does better than without, so I'm starting to move 
+towards to 2 when it comes to updown, but also in this is thriftyness with 2 in both cases, 
+more interesting.
+
+Oops, you'll notice a gap, let's take a look.
+
+  7    350    (20,12)  350    (20, 3)  (1,3,1,1,1)
+
+Bombed, thriftyness with updown of 3.  Is it just thriftyness, or thriftyness with udpown of 3 
+that causes this?  Ah, no, it looks like anything with thriftyness of 1 is screwed.  
+
+ 10    350    (18,12)   51    (20,19)  (1,1,2,1,1)
+ 11    350    ( 3, 3)   51    (20,19)  (2,1,2,1,1)
+ 12    350    ( 3, 3)   51    (20,19)  (3,1,2,1,1)
+ 13    350    ( 3, 7)   81    (20,19)  (1,2,2,1,1)
+
+Oddly enough, the only thing that is the same in these is the updown of 1, and seeing as how we've seen that random does better, I'm will to be that it is that.  Just ignore the 13, it's a fluke made by the thriftyness of 1.
+
+Back to the good ones.
+
+ 15     80    (20,19)   97    (20,19)  (3,2,2,1,1)
+ 17     79    (20,19)  255    (20,19)  (2,3,2,1,1)
+
+The difference between these two is not much, it seems that an updown of 3 is beneficial when it only uses it half as often, but I'm still standing by randomness for updown.
+
+ 23     72    (20,19)   79    (20,19)  (2,2,3,1,1)
+ 24     73    (20,19)   81    (20,19)  (3,2,3,1,1)
+
+Apparently a random thriftyness doesn't hurt it that much, thriftyness can either be 2 or 3, 
+as long as updown is 2.
+
+ 26     76    (20,19)  269    (20,19)  (2,3,3,1,1)
+ 36     77    (20,19)  270    (20,19)  (3,3,1,2,1)
+
+Here, we see the same phenomenon  as stated before, HOWEVER, there is a resolutness of 2 in 
+the second.  While I don't think this should make me back away from my earlier theories, it 
+is odd.
+
+ 45     81    (20,19)  230    (20,19)  (3,3,2,2,1)
+ 54     94    (20,19)  241    (20,19)  (3,3,3,2,1)
+
+More resolutness problems here, odd, it's just randomly choosing up or down, man, this sickens
+ me.
+
+Those that didn't make it (200 up)
+
+First of all, I'm not going to pay attention to ones with thriftyness of 1, we know why they 
+didn't make it.
+
+  1    350    ( 3, 3)   51    (20,19)  (1,1,1,1,1)
+  2    350    ( 3, 3)   51    (20,19)  (2,1,1,1,1)
+  3    350    ( 3, 3)   51    (20,19)  (3,1,1,1,1)
+  4    350    ( 3, 7)  113    (20,19)  (1,2,1,1,1)
+  7    350    (20,12)  350    (20, 3)  (1,3,1,1,1)
+ 10    350    (18,12)   51    (20,19)  (1,1,2,1,1)
+ 11    350    ( 3, 3)   51    (20,19)  (2,1,2,1,1)
+ 12    350    ( 3, 3)   51    (20,19)  (3,1,2,1,1)
+ 13    350    ( 3, 7)   81    (20,19)  (1,2,2,1,1)
+ 16    350    ( 3, 7)  350    (19, 3)  (1,3,2,1,1)
+ 19    350    (18,12)   51    (20,19)  (1,1,3,1,1)
+ 20    350    ( 3, 3)   51    (20,19)  (2,1,3,1,1)
+ 21    350    ( 3, 3)   51    (20,19)  (3,1,3,1,1)
+ 22    350    (18,12)   99    (20,19)  (1,2,3,1,1)
+ 25    350    (20,12)  350    (20, 3)  (1,3,3,1,1)
+
+One thing I DO see here, is that updown of 1 sucks, and when updown isn't 1, thriftyness is 1.
+
+Below here, resolutness of 2, note, some HAVE made it, mostly those with the stipulations noted
+ above with thriftyness and updown.
+
+ 28    311    (20,12)   54    (20,19)  (1,1,1,2,1)
+ 29    350    (19,12)   55    (20,19)  (2,1,1,2,1)
+ 30    272    (19,12)   54    (20,19)  (3,1,1,2,1)
+ 31    350    (18,12)   80    (20,19)  (1,2,1,2,1)
+ 32    350    ( 3, 7)   90    (20,19)  (2,2,1,2,1)
+ 33    311    (18,12)   83    (20,19)  (3,2,1,2,1)
+ 34    350    (20,12)  350    (20, 3)  (1,3,1,2,1)
+ 35    350    (19,12)  350    (19, 3)  (2,3,1,2,1)
+ 37    350    (20,12)   55    (20,19)  (1,1,2,2,1)
+ 38    350    (19,12)   58    (20,19)  (2,1,2,2,1)
+ 39    311    (19,12)   56    (20,19)  (3,1,2,2,1)
+ 40    350    ( 3, 6)   76    (20,19)  (1,2,2,2,1)
+ 41    350    (20,12)   93    (20,19)  (2,2,2,2,1)
+ 42    350    ( 3, 7)   88    (20,19)  (3,2,2,2,1)
+ 43    350    (20,12)  350    (20, 3)  (1,3,2,2,1)
+ 44    350    (20,12)  350    (20, 3)  (2,3,2,2,1)
+ 48    350    (18,12)   54    (20,19)  (3,1,3,2,1)
+ 49    350    ( 2,13)   79    (20,19)  (1,2,3,2,1)
+ 50    350    (20,12)   71    (20,19)  (2,2,3,2,1)
+ 51    350    ( 3, 7)   79    (20,19)  (3,2,3,2,1)
+ 52    350    (20,12)  311    (20, 3)  (1,3,3,2,1)
+ 53    350    ( 3, 7)  350    (20, 3)  (2,3,3,2,1)
+
+Lower than here, all bombed, most likely because of resolutness of 3.
+
+ 55    350    (20,12)   60    (20,19)  (1,1,1,3,1)
+ 56    350    (20,12)   60    (20,19)  (2,1,1,3,1)
+ 57    350    (20,12)   60    (20,19)  (3,1,1,3,1)
+ 58    350    (20,12)   89    (20,19)  (1,2,1,3,1)
+ 59    313    (20,12)   95    (20,19)  (2,2,1,3,1)
+ 60    305    (20,12)   94    (20,19)  (3,2,1,3,1)
+ 61    350    (20,12)  350    (20, 3)  (1,3,1,3,1)
+ 62    350    (20,12)  350    (20, 3)  (2,3,1,3,1)
+ 63    350    (20,12)  350    (20, 3)  (3,3,1,3,1)
+ 64    195    (20,19)   62    (20,19)  (1,1,2,3,1)
+ 65    195    (20,19)   62    (20,19)  (2,1,2,3,1)
+ 66    195    (20,19)   62    (20,19)  (3,1,2,3,1)
+ 67    272    (19,12)  109    (20,19)  (1,2,2,3,1)
+ 68    350    (19,12)  107    (20,19)  (2,2,2,3,1)
+ 69    275    (20,19)  119    (20,19)  (3,2,2,3,1)
+ 70    350    (20,12)  350    (20, 3)  (1,3,2,3,1)
+ 71    350    (20,12)  350    (20, 3)  (2,3,2,3,1)
+ 72    350    (20,12)  350    (20, 3)  (3,3,2,3,1)
+ 73    195    (20,19)   62    (20,19)  (1,1,3,3,1)
+ 74    195    (20,19)   62    (20,19)  (2,1,3,3,1)
+ 75    195    (20,19)   62    (20,19)  (3,1,3,3,1)
+ 76    311    (20,19)   92    (20,19)  (1,2,3,3,1)
+ 77    311    (20,12)   99    (20,19)  (2,2,3,3,1)
+ 78    350    (20,12)   83    (20,19)  (3,2,3,3,1)
+ 79    350    (20,12)  350    (20, 3)  (1,3,3,3,1)
+ 80    350    (20,12)  350    (20, 3)  (2,3,3,3,1)
+ 81    350    (20,12)  350    (20, 3)  (3,3,3,3,1)
+
+Right, next map.
+
+Oh, btw, we've got a tie between 9 and 6, they've both made it through on two maps, looks like
+ we've got a tie breaker.
+
+Map 4
+
+Ran em through map 3 backwards.
+
+Top Scores - 
+
+  3     83    ( 2, 1)   53    ( 2, 1)  (3,1,1,1,1)
+ 12     83    ( 2, 1)   53    ( 2, 1)  (3,1,2,1,1)
+ 21     83    ( 2, 1)   53    ( 2, 1)  (3,1,3,1,1)
+
+Interesting, in this one, thriftyness was, as always, 3, and updown was, interestingly, 1. 
+ This could be a precendent for the map.
+
+High Scores -
+
+  2    158    ( 2, 1)  102    ( 2, 1)  (2,1,1,1,1)
+
+In this case, apparently, an updown of one made up for a thriftyness of 2.
+
+  6    137    ( 2, 1)   51    ( 2, 1)  (3,2,1,1,1)
+
+And in this case, an updown of 2 is sufficient with a thriftyness of 3.
+
+ 11    149    ( 2, 1)   87    ( 2, 1)  (2,1,2,1,1)
+ 15    136    ( 2, 1)   51    ( 2, 1)  (3,2,2,1,1)
+ 20    150    ( 2, 1)   85    ( 2, 1)  (2,1,3,1,1)
+ 24    148    ( 2, 1)   67    ( 2, 1)  (3,2,3,1,1)
+
+These two are annoyance increments of the first two.
+
+ 30    136    ( 2, 1)   82    ( 2, 1)  (3,1,1,2,1)
+ 33    116    ( 2, 1)   53    ( 2, 1)  (3,2,1,2,1)
+
+Maybe an updown of 2 is better? Notice, resolutness is 2, hmm, score show little degredation.
+
+ 39    156    ( 2, 1)   82    ( 2, 1)  (3,1,2,2,1)
+ 48    127    ( 2, 1)  103    ( 2, 1)  (3,1,3,2,1)
+ 51    113    ( 2, 1)   55    ( 2, 1)  (3,2,3,2,1)
+
+Oddly, the resolutness is 2, with still no degredation of scores, and of course, thriftyness is
+ 3 and updown is 1 or 2.
+
+Alright, screw this shit, let's go right on to the end.  Hell, I'm sure we all know the reasons
+ and shit and what not for all this, it's all very VERY interesting, isn't it?
+
+Anyway, the overall winner is #6!  It made it through on 3 maps, 9 made 2.  Thanks folks!
+
+
+Second Half - Obstacle Course
+
+Out of the frying pan, and into the first, ey gad!  Alright, now is the time to check out the 
+obstacle course scores, and decide who won.  A note of warning, if something with thrifytness
+ 3 and updown 2 wins, I'll kill myself!  Also, something I don't understand, the obstacle
+ course is symmetrical, yet the different run-throughs scored differently, what, is the deal...
+ naw.
+
+Set 1
+
+Top Scores - 
+
+  3     67    (20, 1)   45    (20, 1)  (3,1,1,1,1)
+ 12     67    (20, 1)   45    (20, 1)  (3,1,2,1,1)
+ 21     67    (20, 1)   45    (20, 1)  (3,1,3,1,1)
+
+A standard set of three with an annoyance increment.  Now, everything about them is 'normal'
+ (ie, it's set to 1) except for thriftyness, which is 3, so it's not being used, which means 
+that updown is always being used.  Oh, wait, now I know why some scored differently on 
+different run throughs, because they only go one direction.  My guess, of course, is that when 
+we reverse this one, then the set of traits that match these, but with updown as 3 will show 
+the same results.  Hold me to this.  Alright, the basic thing is that it won because it always
+ went a certain direction.  Hmm.
+
+High Scores - 
+
+  1     47    (20, 1)   51    (20, 1)  (1,1,1,1,1)
+  2     74    (20, 1)   47    (20, 1)  (2,1,1,1,1)
+
+Alright, in these two, we have a simple one (#1) and one with random thriftyness.  Not much 
+difference in scores, and I'm thinking it's because they dont' show that much difference in 
+behavior.
+
+  6     79    (20, 1)   99    (20, 1)  (3,2,1,1,1)
+
+Ah ha!  Good old #6 doesn't show that good of a score, but I don't doubt that it will be 
+consistent on ALL maps.  Even with my minor victory, I know it's fleeting.
+
+
+ 13     66    (20, 1)   81    (20, 1)  (1,2,2,1,1)
+ 15     60    (20, 1)   68    (20, 1)  (3,2,2,1,1)
+ 19     47    (20, 1)   51    (20, 1)  (1,1,3,1,1)
+ 20     93    (20,15)   72    (20, 1)  (2,1,3,1,1)
+ 22     52    (20, 1)   59    (20, 1)  (1,2,3,1,1)
+ 24     56    (20, 1)   66    (20, 1)  (3,2,3,1,1)
+
+These are all annoyance increments, and therefore have no bearing.  But this next one has a 
+resoulutness increment, ooh, goody.
+
+These are mostly annoyance increments of the ones up there, but let's take a look at them just
+ because of the resolutness change.
+
+ 28    237    (20, 1)   56    (20, 1)  (1,1,1,2,1)
+
+Small increase in score.
+
+ 29     93    (20, 1)   56    (20, 1)  (2,1,1,2,1)
+
+This one lowered in score because of the change.
+
+ 30    155    (20, 1)   48    (20, 1)  (3,1,1,2,1)
+
+Ah, same as the winners, but with a resolutness change of 1, yet only 3 off. This result should 
+probably be used as the rule, not an exception when it comes to determining the effect 
+resolutness has on this map, ie, little.
+
+ 31    250    (10,12)   65    (20, 1)  (1,2,1,2,1)
+
+More here, but note randomness, could have an effect.
+
+ 32    286    (10,12)   59    (20, 1)  (2,2,1,2,1)
+ 33     89    (20, 1)   59    (20, 1)  (3,2,1,2,1)
+
+These are lower than their counterparts, but again, randomness.
+
+ 37    312    ( 5, 8)   56    (20, 1)  (1,1,2,2,1)
+
+Here's something else to lend credence to the theory, this is exaclty the same as its
+ counterpart.
+
+ 38    206    ( 8, 8)   57    (20, 1)  (2,1,2,2,1)
+
+Basically same thing here.
+
+ 39    111    (20, 1)   51    (20, 1)  (3,1,2,2,1)
+ 40    180    (10,12)   91    (20, 1)  (1,2,2,2,1)
+ 41    199    (20, 1)   62    (20, 1)  (2,2,2,2,1)
+ 42     92    (20, 1)   49    (20, 1)  (3,2,2,2,1)
+ 46    312    (10,12)   58    (20, 1)  (1,1,3,2,1)
+ 47    125    (20, 1)   56    (20, 1)  (2,1,3,2,1)
+ 48    119    (20, 1)   60    (20, 1)  (3,1,3,2,1)
+ 49    312    (20, 1)   80    (20, 1)  (1,2,3,2,1)
+ 50    249    (10,12)   93    (20, 1)  (2,2,3,2,1)
+ 51    109    (20, 1)   69    (20, 1)  (3,2,3,2,1)
+
+If I took the time to look at these, I doubt I would find anything new.
+
+Ah, resolutness 3, do we see a difference? No, we don't.
+
+ 55    350    (10,12)   60    (20, 1)  (1,1,1,3,1)
+ 56    350    (10,12)   60    (20, 1)  (2,1,1,3,1)
+ 57    350    (10,12)   60    (20, 1)  (3,1,1,3,1)
+ 58    350    (10,12)   73    (20, 1)  (1,2,1,3,1)
+ 59    350    (10,12)   80    (20, 1)  (2,2,1,3,1)
+ 64    350    (10,12)   62    (20, 1)  (1,1,2,3,1)
+ 65    350    (10,12)   62    (20, 1)  (2,1,2,3,1)
+ 66    350    (10,12)   62    (20, 1)  (3,1,2,3,1)
+ 67    332    (10,12)   94    (20, 1)  (1,2,2,3,1)
+ 73    350    (10,12)   62    (20, 1)  (1,1,3,3,1)
+ 74    350    (10,12)   62    (20, 1)  (2,1,3,3,1)
+ 75    350    (10,12)   62    (20, 1)  (3,1,3,3,1)
+ 76    350    (10,12)   90    (20, 1)  (1,2,3,3,1)
+ 77    350    ( 9,12)   91    (20, 1)  (2,2,3,3,1)
+ 78    350    (10,12)   97    (20, 1)  (3,2,3,3,1)
+
+Losers - 
+
+  4     61    (20, 1)  106    (20, 1)  (1,2,1,1,1)
+  5     50    (20, 1)  215    (20, 1)  (2,2,1,1,1)
+
+Odd, I would have thought this would be OK.
+
+  7    350    (18, 8)  350    (20,17)  (1,3,1,1,1)
+  8     93    (20, 1)  350    (15, 1)  (2,3,1,1,1)
+  9     53    (20, 1)  351    (15, 1)  (3,3,1,1,1)
+
+Yeah, I figured this, but watch these get first on the next map.
+
+ 14     49    (20, 1)  247    (15, 2)  (2,2,2,1,1)
+
+Maybe random is REALLY random, I suppose shit does happen, but it's odd that it seems to 
+happen all the time with these two (ie, thriftyness and updown in these values).
+
+ 16    350    (18, 8)  350    (19,17)  (1,3,2,1,1)
+ 17     78    (20, 1)  350    (15, 1)  (2,3,2,1,1)
+ 18     53    (20, 1)  351    (15, 1)  (3,3,2,1,1)
+
+Same as two above, these are annoyance increments.
+
+ 23     52    (20, 1)  134    (20, 1)  (2,2,3,1,1)
+
+ 25    350    (18, 8)  350    (20,17)  (1,3,3,1,1)
+ 26     64    (20, 1)  235    (15, 1)  (2,3,3,1,1)
+ 27     53    (20, 1)  351    (15, 1)  (3,3,3,1,1)
+
+Wha? Randomness I guess, but 26 shouldn't have made it.
+
+ 34    350    (10,12)  330    (20,17)  (1,3,1,2,1)
+ 35    350    (10,13)  350    (19,17)  (2,3,1,2,1)
+ 36    255    ( 7, 6)  198    (20, 1)  (3,3,1,2,1)
+
+Well, I'll be, resolutness seems to have SOME effect.
+
+ 43    350    (10,12)  350    (19,17)  (1,3,2,2,1)
+ 44    350    (18, 8)  350    (20,17)  (2,3,2,2,1)
+ 45    183    (20, 1)  257    (15, 4)  (3,3,2,2,1)
+
+Hmm, these have a three for updown, interesting, I'm thinking the mixture is responsible.
+
+ 52    350    (18, 9)  350    (20,17)  (1,3,3,2,1)
+ 53    350    (18, 9)  350    (19,17)  (2,3,3,2,1)
+ 54    238    (20, 1)  312    (15, 1)  (3,3,3,2,1)
+
+Same here. 
+
+ 60    350    ( 9,12)  121    (20, 1)  (3,2,1,3,1)
+ 61    350    (10,12)  350    (20,17)  (1,3,1,3,1)
+ 62    350    (10,12)  350    (20,17)  (2,3,1,3,1)
+ 63    350    (10,12)  350    (20,17)  (3,3,1,3,1)
+ 68    350    (10,12)  114    (20, 1)  (2,2,2,3,1)
+ 69    350    (10,12)  109    (20, 1)  (3,2,2,3,1)
+ 70    350    (10,12)  350    (20,17)  (1,3,2,3,1)
+ 71    350    (10,12)  350    (20,17)  (2,3,2,3,1)
+ 72    350    (10,12)  350    (20,17)  (3,3,2,3,1)
+ 79    350    (10,12)  350    (20,17)  (1,3,3,3,1)
+ 80    350    (10,13)  350    (20,17)  (2,3,3,3,1)
+ 81    350    (10,13)  350    (20,17)  (3,3,3,3,1)
+
+Alright, a few things, and predictions for this map and the next ones.  Annoyance as always 
+doesn't matter, resolutness doesn't matter (okay, it can matter in some situations, but for 
+the faster ones, it really doesn't), thriftyness really doesn't matter (it can add and detract,
+ moreso in the slower sets), 1,2,3, updown is best as 1, but, as always, randomness is good
+ too, however 3 is bad, it will be good on the next map tho :)
+
+Set 2
+
+Top Scores - 
+
+  7    350    ( 4,13)   51    ( 2,19)  (1,3,1,1,1)
+ 16    350    ( 4,13)   51    ( 2,19)  (1,3,2,1,1)
+ 25    350    ( 4,13)   51    ( 2,19)  (1,3,3,1,1)
+
+Wow, was I RIGHT OR WHAT!  Oddly enough, it wasn't exactly as I planned, they were slower by
+ 6 than the fastest for the last.  Still, I am vindicated.
+
+High Scores - 
+
+  2    350    ( 6,13)   65    ( 2,19)  (2,1,1,1,1)
+  3    350    ( 8,17)   58    ( 2,19)  (3,1,1,1,1)
+
+Okay, here's the deal, #1 bombed, apparently because it had a value of 1 for thriftyness.  
+Okay, thriftyness 1 is BAD, but ascending, higher values are marginally better, but not by
+ much.
+
+  4    350    ( 2,13)   57    ( 2,19)  (1,2,1,1,1)
+  5    350    ( 3,13)   66    ( 2,19)  (2,2,1,1,1)
+  6    288    ( 2,19)   61    ( 2,19)  (3,2,1,1,1)
+
+Oddly enough, the lowest setting for thriftyness actually has the lowest score, don't ask me,
+ second has last score, randomness, and with the three, well, isn't it good old #6!
+  Apparently showing the same behaviors as before, basically totally random, sigh.
+
+  8    350    ( 4,13)   59    ( 2,19)  (2,3,1,1,1)
+
+Didn't I say three would be good for this map?
+
+Ten was on the same annoyance increment with 1, it bobmed.
+
+ 11    350    ( 5,13)   64    ( 2,19)  (2,1,2,1,1)
+ 12    350    ( 8,17)   58    ( 2,19)  (3,1,2,1,1)
+
+Increments.
+
+ 13    350    ( 5,13)   87    ( 2,19)  (1,2,2,1,1)
+
+This one shows major difference with only an annoyance increment, but, once again, randomness.
+
+ 14    350    (19,15)   90    ( 2,19)  (2,2,2,1,1)
+
+Same deal.
+
+ 15    316    ( 3,13)   55    ( 2,19)  (3,2,2,1,1)
+
+Hmm, I'm gonna say same deal, even tho it scored better.
+
+ 17    350    ( 4,13)   67    ( 2,19)  (2,3,2,1,1)
+ 20    350    ( 2,13)   58    ( 2,19)  (2,1,3,1,1)
+ 21    350    ( 8,17)   58    ( 2,19)  (3,1,3,1,1)
+ 23    350    ( 3,13)   70    ( 2,19)  (2,2,3,1,1)
+ 24    296    ( 5,13)   57    ( 2,19)  (3,2,3,1,1)
+ 25    350    ( 4,13)   51    ( 2,19)  (1,3,3,1,1)
+ 26    350    ( 4,13)   56    ( 2,19)  (2,3,3,1,1)
+
+Increments, skip.
+
+ 30    350    ( 8,19)   77    ( 2,19)  (3,1,1,2,1)
+ 32    350    ( 2,13)   93    ( 2,19)  (2,2,1,2,1)
+ 33    329    ( 8,18)   62    ( 2,19)  (3,2,1,2,1)
+
+Change in resolution caused increase, somewhat minor.
+
+ 34    350    ( 5,13)   92    ( 2,19)  (1,3,1,2,1)
+
+This one was rather major.
+
+ 35    350    (18,15)   55    ( 2,19)  (2,3,1,2,1)
+
+Stayed the same...
+
+ 36    350    ( 3,13)   58    ( 2,19)  (3,3,1,2,1)
+
+Interesting, because 27 bombed, perhaps resolutness has a greater effect.
+
+ 39    350    ( 4,13)   69    ( 2,19)  (3,1,2,2,1)
+ 41    350    ( 2,13)   69    ( 2,19)  (2,2,2,2,1)
+ 42    350    ( 8,19)   57    ( 2,19)  (3,2,2,2,1)
+ 43    350    ( 3,13)   92    ( 2,19)  (1,3,2,2,1)
+ 44    350    (19,15)   92    ( 2,19)  (2,3,2,2,1)
+ 45    350    ( 5,13)   69    ( 2,19)  (3,3,2,2,1)
+ 48    350    ( 4,13)   74    ( 2,19)  (3,1,3,2,1)
+ 50    350    ( 2,13)   64    ( 2,19)  (2,2,3,2,1)
+ 51    335    ( 8,17)   53    ( 2,19)  (3,2,3,2,1)
+ 53    350    ( 3,13)   90    ( 2,19)  (2,3,3,2,1)
+ 54    350    (18,13)   73    ( 2,19)  (3,3,3,2,1)
+
+The rest are increments.
+
+Now on to the 3's.
+
+ 58    350    (18,15)   93    ( 2,19)  (1,2,1,3,1)
+
+ 60    350    ( 2,13)   92    ( 2,19)  (3,2,1,3,1)
+
+Ah, we see a jump of 40 when we change resolutness to 3, resolutness definitely has an 
+effect
+
+ 61    350    ( 6,13)   60    ( 2,19)  (1,3,1,3,1)
+ 62    350    ( 6,13)   60    ( 2,19)  (2,3,1,3,1)
+ 63    350    ( 6,13)   60    ( 2,19)  (3,3,1,3,1)
+
+But these all lowered, taking a closer look, these results make absolutely no sense, simply
+ because they contain all a different value for thriftyness, and have the same results, wait,
+ it's because of the resolutness.  In fact, looking at the rest of these, we see similar scores
+ along the same vein.
+
+ 68    350    ( 2,13)   91    ( 2,19)  (2,2,2,3,1)
+ 69    350    (18,15)   90    ( 2,19)  (3,2,2,3,1)
+
+Here.
+
+ 70    350    (18,15)   62    ( 2,19)  (1,3,2,3,1)
+ 71    350    (18,15)   62    ( 2,19)  (2,3,2,3,1)
+ 72    350    (18,15)   62    ( 2,19)  (3,3,2,3,1)
+
+Here.
+
+ 77    350    ( 2,13)   89    ( 2,19)  (2,2,3,3,1)
+
+ 79    350    (18,15)   62    ( 2,19)  (1,3,3,3,1)
+ 80    350    (18,15)   62    ( 2,19)  (2,3,3,3,1)
+ 81    350    (18,15)   62    ( 2,19)  (3,3,3,3,1)
+
+And here, the differences are due to annoyance, obviously.
+
+When I get this set done, I am definitely taking an Alpha Centauri break, man, the results
+ will invariably all be somewhat the same.
+
+Going on to the losers...
+
+Losers - 
+
+  1    350    ( 3,11)  350    ( 2, 3)  (1,1,1,1,1)
+  9    350    ( 4,13)  350    (20, 1)  (3,3,1,1,1)
+ 10    350    (16, 5)  350    ( 2, 3)  (1,1,2,1,1)
+ 18    350    ( 4,13)  350    (20, 1)  (3,3,2,1,1)
+ 19    350    (16, 5)  350    ( 2, 3)  (1,1,3,1,1)
+ 27    350    ( 4,13)  350    (20, 1)  (3,3,3,1,1)
+ 28    350    (16, 4)  316    ( 2,19)  (1,1,1,2,1)
+ 29    350    ( 3,11)  350    ( 3, 3)  (2,1,1,2,1)
+ 37    350    ( 3,11)  350    ( 3, 3)  (1,1,2,2,1)
+ 38    350    ( 3,11)  314    ( 2, 3)  (2,1,2,2,1)
+ 46    350    ( 2,11)  350    ( 3, 3)  (1,1,3,2,1)
+ 47    350    ( 2,11)  311    ( 3, 3)  (2,1,3,2,1)
+ 55    350    ( 2,11)  350    ( 2, 3)  (1,1,1,3,1)
+ 56    350    ( 2,11)  350    ( 2, 3)  (2,1,1,3,1)
+ 57    350    ( 2,11)  350    ( 2, 3)  (3,1,1,3,1)
+ 64    350    ( 2,11)  350    ( 2, 3)  (1,1,2,3,1)
+ 65    350    ( 2,11)  350    ( 2, 3)  (2,1,2,3,1)
+ 66    350    ( 2,11)  350    ( 2, 3)  (3,1,2,3,1)
+ 73    350    ( 2,11)  350    ( 2, 3)  (1,1,3,3,1)
+ 74    350    (18,13)  350    ( 2, 3)  (2,1,3,3,1)
+ 75    350    (18,13)  350    ( 2, 3)  (3,1,3,3,1)
+
+Looking at all of these, one thing they have in common is that none of them have 2 as an updown.
+So, we assume that 2 is good.  Very few three's for updown, so that's second.  Also few 
+thriftyness's as 2, so, we think that's good also.
+
+Set 3 
+
+Top Scores - 
+
+  1    350    ( 3, 3)   51    (20,19)  (1,1,1,1,1)
+  2    350    ( 3, 3)   51    (20,19)  (2,1,1,1,1)
+  3    350    ( 3, 3)   51    (20,19)  (3,1,1,1,1)
+ 10    350    (18,12)   51    (20,19)  (1,1,2,1,1)
+ 11    350    ( 3, 3)   51    (20,19)  (2,1,2,1,1)
+ 12    350    ( 3, 3)   51    (20,19)  (3,1,2,1,1)
+ 19    350    (18,12)   51    (20,19)  (1,1,3,1,1)
+ 20    350    ( 3, 3)   51    (20,19)  (2,1,3,1,1)
+ 21    350    ( 3, 3)   51    (20,19)  (3,1,3,1,1)
+
+Interesting, the apparent only thing that matters, is updown, as 1.  Goody. I think that's it.
+This is truly interesting, thriftyness doesn't matter.
+
+High Scores - 
+
+  5     67    (20,19)   91    (20,19)  (2,2,1,1,1)
+  6     83    (20,19)   91    (20,19)  (3,2,1,1,1)
+
+Since we know thriftyness doesn't matter, and annoyance doesn't, and lookahead is constant, 
+let's look at the updown here, it's 2 with a medium degredation in scores.
+
+
+ 13    350    ( 3, 7)   81    (20,19)  (1,2,2,1,1)
+ 14     55    (20,19)   66    (20,19)  (2,2,2,1,1)
+ 15     80    (20,19)   97    (20,19)  (3,2,2,1,1)
+
+Uh, randomness?
+
+ 22    350    (18,12)   99    (20,19)  (1,2,3,1,1)
+ 23     72    (20,19)   79    (20,19)  (2,2,3,1,1)
+ 24     73    (20,19)   81    (20,19)  (3,2,3,1,1)
+
+Same.
+
+ 28    311    (20,12)   54    (20,19)  (1,1,1,2,1)
+ 29    350    (19,12)   55    (20,19)  (2,1,1,2,1)
+ 30    272    (19,12)   54    (20,19)  (3,1,1,2,1)
+
+Here we see behavior usual of the mazes, where an increase in resolutness brings an increase
+in scores.
+
+ 31    350    (18,12)   80    (20,19)  (1,2,1,2,1)
+ 32    350    ( 3, 7)   90    (20,19)  (2,2,1,2,1)
+ 33    311    (18,12)   83    (20,19)  (3,2,1,2,1)
+
+Randomness accounts for this.
+
+ 37    350    (20,12)   55    (20,19)  (1,1,2,2,1)
+ 38    350    (19,12)   58    (20,19)  (2,1,2,2,1)
+ 39    311    (19,12)   56    (20,19)  (3,1,2,2,1)
+ 40    350    ( 3, 6)   76    (20,19)  (1,2,2,2,1)
+ 41    350    (20,12)   93    (20,19)  (2,2,2,2,1)
+ 42    350    ( 3, 7)   88    (20,19)  (3,2,2,2,1)
+ 46    350    (20,12)   57    (20,19)  (1,1,3,2,1)
+ 47    311    ( 3, 5)   56    (20,19)  (2,1,3,2,1)
+ 48    350    (18,12)   54    (20,19)  (3,1,3,2,1)
+ 49    350    ( 2,13)   79    (20,19)  (1,2,3,2,1)
+ 50    350    (20,12)   71    (20,19)  (2,2,3,2,1)
+ 51    350    ( 3, 7)   79    (20,19)  (3,2,3,2,1)
+ 55    350    (20,12)   60    (20,19)  (1,1,1,3,1)
+ 56    350    (20,12)   60    (20,19)  (2,1,1,3,1)
+ 57    350    (20,12)   60    (20,19)  (3,1,1,3,1)
+ 58    350    (20,12)   89    (20,19)  (1,2,1,3,1)
+ 59    313    (20,12)   95    (20,19)  (2,2,1,3,1)
+ 60    305    (20,12)   94    (20,19)  (3,2,1,3,1)
+ 64    195    (20,19)   62    (20,19)  (1,1,2,3,1)
+ 65    195    (20,19)   62    (20,19)  (2,1,2,3,1)
+ 66    195    (20,19)   62    (20,19)  (3,1,2,3,1)
+ 73    195    (20,19)   62    (20,19)  (1,1,3,3,1)
+ 74    195    (20,19)   62    (20,19)  (2,1,3,3,1)
+ 75    195    (20,19)   62    (20,19)  (3,1,3,3,1)
+ 76    311    (20,19)   92    (20,19)  (1,2,3,3,1)
+ 77    311    (20,12)   99    (20,19)  (2,2,3,3,1)
+ 78    350    (20,12)   83    (20,19)  (3,2,3,3,1)
+
+And we see similar behaviors throughout, main things: thriftyness doesn't matter, updown 1 is
+best, resolutness brings increase in scores.
+
+Losers - 
+
+  7    350    (20,12)  350    (20, 3)  (1,3,1,1,1)
+  8     77    (20,19)  262    (20,19)  (2,3,1,1,1)
+  9     45    (20,19)  350    ( 2, 1)  (3,3,1,1,1)
+ 16    350    ( 3, 7)  350    (19, 3)  (1,3,2,1,1)
+ 17     79    (20,19)  255    (20,19)  (2,3,2,1,1)
+ 18     45    (20,19)  350    ( 2, 1)  (3,3,2,1,1)
+ 25    350    (20,12)  350    (20, 3)  (1,3,3,1,1)
+ 26     76    (20,19)  269    (20,19)  (2,3,3,1,1)
+ 27     45    (20,19)  350    ( 2, 1)  (3,3,3,1,1)
+ 34    350    (20,12)  350    (20, 3)  (1,3,1,2,1)
+ 35    350    (19,12)  350    (19, 3)  (2,3,1,2,1)
+ 36     77    (20,19)  270    (20,19)  (3,3,1,2,1)
+ 52    350    (20,12)  311    (20, 3)  (1,3,3,2,1)
+ 53    350    ( 3, 7)  350    (20, 3)  (2,3,3,2,1)
+ 54     94    (20,19)  241    (20,19)  (3,3,3,2,1)
+ 61    350    (20,12)  350    (20, 3)  (1,3,1,3,1)
+ 62    350    (20,12)  350    (20, 3)  (2,3,1,3,1)
+ 63    350    (20,12)  350    (20, 3)  (3,3,1,3,1)
+ 67    272    (19,12)  109    (20,19)  (1,2,2,3,1)
+ 68    350    (19,12)  107    (20,19)  (2,2,2,3,1)
+ 69    275    (20,19)  119    (20,19)  (3,2,2,3,1)
+ 70    350    (20,12)  350    (20, 3)  (1,3,2,3,1)
+ 71    350    (20,12)  350    (20, 3)  (2,3,2,3,1)
+ 72    350    (20,12)  350    (20, 3)  (3,3,2,3,1)
+ 79    350    (20,12)  350    (20, 3)  (1,3,3,3,1)
+ 80    350    (20,12)  350    (20, 3)  (2,3,3,3,1)
+ 81    350    (20,12)  350    (20, 3)  (3,3,3,3,1)
+
+
+One thing we see repeatedly, is that a resoultness of 2 can save, majorly, even with a 
+resolutness of 3, a set of scores (67,68,69), so, for this map, we have res = 3,2, updown = 1,2,
+and that's it.  So far, for the whole thing, we have:
+
+	Thriftyness = 1,2,3
+	Updown = 2
+	Annoyance = 1,2,3
+ 	Resolutness = 1
+	Lookahead = 1
+
+Set 4 - 
+
+(Man I'm blowing through these things! :)
+
+

@@ -1,0 +1,4 @@
+LoadMap 1
+Redraw
+Pause  2
+Gameloop
